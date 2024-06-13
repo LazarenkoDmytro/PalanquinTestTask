@@ -1,6 +1,7 @@
 package sample;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
@@ -48,6 +49,9 @@ public class DateSorter {
      * @return the collection of dates sorted according to the specified criteria
      */
     public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
-        // Solution here
+        List<LocalDate> sortedDates = new ArrayList<>(unsortedDates); // Copy to not change the initial state
+        sortedDates.sort(localDateComparator);
+
+        return sortedDates;
     }
 }
